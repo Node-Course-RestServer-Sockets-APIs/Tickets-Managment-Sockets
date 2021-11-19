@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Socket APP</title>
+</head>
+<body>
+    <h1>Socket Client</h1>
+    <hr>
+    <p>Current status:</p>
+    <div>
+        <input type="text" id="text__message">
+        <button id="button__send">Send</button>
+    </div>
+
+
+    <span id="status-text-online" style="display: none">Online</span>
+    <span id="status-text-offline" style="display: none">Offline</span>
+</body>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="js/socket-client.js"></script>
+</html>
