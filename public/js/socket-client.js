@@ -1,9 +1,10 @@
-const socket = io();
 const online = document.querySelector("#status-text-online");
 const offline = document.querySelector("#status-text-offline");
 
 const message = document.querySelector("#text__message");
 const button = document.querySelector("#button__send");
+
+const socket = io();
 
 socket.on("connect", () => {
 	// console.log("Client connected");
