@@ -2,8 +2,7 @@ import express, { Application } from "express";
 import cors from "cors";
 import socket from "socket.io";
 import http from "http";
-
-import socketController from "../sockets/controller";
+import { socketController } from "../sockets/controller";
 
 export default class Server {
 	app: Application;

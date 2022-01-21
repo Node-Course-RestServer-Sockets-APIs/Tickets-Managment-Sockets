@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-class Ticket {
+export class Ticket {
 	number: number;
 	desk: number | null;
 	constructor(number: number, desk: number | null) {
@@ -51,7 +51,7 @@ export class TicketControl {
 		fs.writeFileSync(joinedPath, JSON.stringify(this.toJson));
 	}
 
-	next() {
+	next(): string {
 		//Update last number of Ticket and create it
 		this.last += 1;
 		const ticket = new Ticket(this.last, null);
@@ -67,13 +67,13 @@ export class TicketControl {
 
 	attend(desk: number) {
 		if (this.tickets.length === 0) {
-			return null;
+			return;
 		}
 		//Extract Ticket from the pool of tickets
-		const ticket = this.tickets.shift();
-		ticket!.desk = desk;
+		const ticket = this.tickets.shift()!;
+		ticket.desk = desk;
 		//Update the array fot the last four
-		this.lastFour.unshift(ticket!);
+		this.lastFour.unshift(ticket);
 		if (this.lastFour.length > 4) this.lastFour.pop();
 
 		this.saveData();

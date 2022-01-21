@@ -32,11 +32,10 @@ export const socketController = (socket: Socket) => {
 
 		if (!attendedTicket) {
 			return callback({
-				ok: false,
 				msg: "Unavailable tickets for the moment.",
 			});
 		} else {
-			callback({ ok: true, attendedTicket });
+			callback({ attendedTicket });
 			socket.emit("awaiting-tickets", ticketControl.tickets.length);
 			socket.broadcast.emit("awaiting-tickets", ticketControl.tickets.length);
 		}
