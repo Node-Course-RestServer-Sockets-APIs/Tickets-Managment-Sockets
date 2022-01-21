@@ -8,12 +8,12 @@ if (!searchParams.has("escritorio")) {
 	throw new Error("Must have escritorio param.");
 }
 
-const lblTitle = document.querySelector("h1")!;
-const smllText = document.querySelector("small")!;
-const btnAttendTicket = document.querySelector("button")!;
+const lblTitle = document.querySelector("h1")! as HTMLElement;
+const smllText = document.querySelector("small")! as HTMLTextAreaElement;
+const btnAttendTicket = document.querySelector("button")! as HTMLButtonElement;
 
-const divAlert = document.querySelector(".alert")!;
-const lblPendientes = document.querySelector("#lblPendientes")!;
+const divAlert = document.querySelector(".alert")! as HTMLDivElement;
+const lblPendientes = document.querySelector("#lblPendientes")! as HTMLElement;
 
 const socket = new io.Server();
 
